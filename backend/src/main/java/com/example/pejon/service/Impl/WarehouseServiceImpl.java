@@ -45,9 +45,9 @@ public class WarehouseServiceImpl implements WarehouseService {
     }
 
     @Override
-    public Warehouse getWarehouseById(Long id) {
+    public WarehouseDto getWarehouseById(Long id) {
         Optional<Warehouse> warehouse = warehouseRepository.findById(id);
-        return warehouse.get();
+        return warehouseConvertor.convertToWarehouseDto(warehouse.get());
     }
 
     @Override

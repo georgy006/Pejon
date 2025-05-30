@@ -11,7 +11,7 @@ import java.util.List;
 public interface WarehouseService {
 
     List<Warehouse> getAllWarehouse();
-    Warehouse getWarehouseById(Long id);
+    WarehouseDto getWarehouseById(Long id);
     List<LineDto> getLinesByWarehouseId(Long id);
     List<ZoneDto> getZoneByWarehouseId(Long id);
     WarehouseDto addWarehouse(Warehouse warehouse);

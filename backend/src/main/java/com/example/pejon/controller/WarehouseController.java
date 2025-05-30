@@ -23,7 +23,7 @@ public class WarehouseController {
         return warehouseService.getAllWarehouse();
     }
     @GetMapping("/{id}")
-    public Warehouse getWarehouseById(@PathVariable Long id){
+    public WarehouseDto getWarehouseById(@PathVariable Long id){
         return warehouseService.getWarehouseById(id);
     }
     @GetMapping("/{id}/lines")
