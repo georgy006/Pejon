@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "b35828e4-1ac8-4bb6-b09a-a744d4bb6dd5",
+		"name": "Pejon2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30296124"
+	},
+	"item": [
+		{
+			"name": "Warehouse",
+			"item": [
+				{
+					"name": "getAllWarehouse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/warehouse/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"warehouse",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getWarehouseById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/warehouse/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"warehouse",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLinesByWarehouseId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/warehouse/2/lines",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"warehouse",
+								"2",
+								"lines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFloorsByWarehouseId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/warehouse/2/zones",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"warehouse",
+								"2",
+								"zones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createWarehouse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Склад Никитич\",\n    \"countLine\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/warehouse",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"warehouse"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Container",
+			"item": [
+				{
+					"name": "getAllContainers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/container/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"container",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getContainerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/container/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"container",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCellsByContainerId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/container/2/cells",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"container",
+								"2",
+								"cells"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCellsByAllContainers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/container/cells",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"container",
+								"cells"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Zone",
+			"item": [
+				{
+					"name": "getAllZones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/zone/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zone",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getZoneById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/zone/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zone",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCellsByZoneId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/zone/6/cells",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zone",
+								"6",
+								"cells"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCellsByAllZones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/zone/cells",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zone",
+								"cells"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shelf",
+			"item": [
+				{
+					"name": "getAllShelves",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/shelf/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getShelfById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/shelf/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCellsByShelfId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/shelf/3/cells",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"3",
+								"cells"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCellsByAllShelves",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/shelf/cells",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"cells"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
