@@ -19,11 +19,11 @@ public class WarehouseController {
     WarehouseService warehouseService;
 
     @GetMapping("/all")
-    public List<WarehouseDto> getAllWarehouse() {
+    public List<Warehouse> getAllWarehouse() {
         return warehouseService.getAllWarehouse();
     }
     @GetMapping("/{id}")
-    public WarehouseDto getWarehouseById(@PathVariable Long id){
+    public Warehouse getWarehouseById(@PathVariable Long id){
         return warehouseService.getWarehouseById(id);
     }
     @GetMapping("/{id}/lines")

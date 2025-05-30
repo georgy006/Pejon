@@ -38,18 +38,16 @@ public class WarehouseServiceImpl implements WarehouseService {
     ZoneConvertor zoneConvertor;
 
     @Override
-    public List<WarehouseDto> getAllWarehouse() {
+    public List<Warehouse> getAllWarehouse() {
         List<Warehouse> warehouses = warehouseRepository.findAll();
 
-        return warehouses.stream()
-                .map(warehouseConvertor::convertToWarehouseDto)
-                .collect(Collectors.toList());
+        return warehouses;
     }
 
     @Override
-    public WarehouseDto getWarehouseById(Long id) {
+    public Warehouse getWarehouseById(Long id) {
         Optional<Warehouse> warehouse = warehouseRepository.findById(id);
-        return warehouseConvertor.convertToWarehouseDto(warehouse.get());
+        return warehouse.get();
     }
 
     @Override

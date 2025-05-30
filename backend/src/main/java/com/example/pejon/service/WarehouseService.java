@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface WarehouseService {
 
-    List<WarehouseDto> getAllWarehouse();
-    WarehouseDto getWarehouseById(Long id);
+    List<Warehouse> getAllWarehouse();
+    Warehouse getWarehouseById(Long id);
     List<LineDto> getLinesByWarehouseId(Long id);
     List<ZoneDto> getZoneByWarehouseId(Long id);
     WarehouseDto addWarehouse(Warehouse warehouse);
