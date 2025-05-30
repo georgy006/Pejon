@@ -113,6 +113,53 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "updateWarehouseById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Склад 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/warehouse/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"warehouse",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteWarehouseById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/warehouse/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"warehouse",
+								"3"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -461,6 +508,81 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "addLine",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Линия 90\",\n    \"count\": 16,\n    \"warehouseId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/line/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"line",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLineById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Линия 95\",\n    \"count\": 10,\n    \"warehouseId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/line/9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"line",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLineById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/line/9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"line",
+								"9"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -566,100 +688,6 @@
 		{
 			"name": "Type",
 			"item": [
-				{
-					"name": "getAllType",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/type/all",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"type",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getTypeById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/type/1",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"type",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addType",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Отправка\",\n    \"terminal\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8080/type/",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"type",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateTypeById",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Отгрузка\",\n    \"terminal\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8080/type/3",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"type",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "getAllType",
 					"request": {
@@ -871,125 +899,12 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "deleteStatusById",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/status/4",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"status",
-								"4"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
 		{
 			"name": "Role",
 			"item": [
-				{
-					"name": "getAllRole",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/role/all",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"role",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getRoleById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/role/1",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"role",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addRole",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Менеджер\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8080/role/",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"role",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateRoleById",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"qwe\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8080/role/4",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"role",
-								"4"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "getAllRole",
 					"request": {
