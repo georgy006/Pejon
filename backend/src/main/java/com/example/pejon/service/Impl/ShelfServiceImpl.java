@@ -55,5 +55,6 @@ public class ShelfServiceImpl implements ShelfService {
         return shelves.stream()
                 .map(shelfConvertor::convertToShelfWithCellDto)
                 .collect(Collectors.toList());
+
     }
 }
