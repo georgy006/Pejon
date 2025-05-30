@@ -245,14 +245,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/zone/6/cells",
+							"raw": "localhost:8080/zone/5/cells",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"zone",
-								"6",
+								"5",
 								"cells"
 							]
 						}
@@ -355,6 +355,26 @@
 							"path": [
 								"shelf",
 								"cells"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getShelvesByLineId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/shelf/line/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"line",
+								"1"
 							]
 						}
 					},
