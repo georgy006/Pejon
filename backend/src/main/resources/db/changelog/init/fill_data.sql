@@ -372,15 +372,15 @@ INSERT INTO cell (name, description, transport_container_id, storage_id) VALUES
 
 -- Заполнение таблицы type (Типы заявок)
 INSERT INTO type (name, terminal) VALUES
-('Delivery', FALSE),
-('Storage', TRUE);
+('Поставка', FALSE),
+('Хранение', TRUE);
 
 -- Заполнение таблицы status (Статусы заявок)
 INSERT INTO status (name, terminal) VALUES
-('Pending', FALSE),
-('Completed', TRUE);
+('В ожидании', FALSE),
+('Завершена', TRUE);
 
 -- Заполнение таблицы application (Заявки)
 INSERT INTO application (title, description, data, type_id, cell_id, status_id, author_id, approver_id) VALUES
-('Incoming Shipment', 'New shipment of goods', '2025-04-01', 1, 1, 1, 1, 2),
-('Storage Request', 'Need extra space for dry goods', '2025-04-02', 2, 2, 2, 2, 3);
+('Входящая поставка', 'Новая партия товаров', '2025-04-01', 1, 1, 1, 1, 2),
+('Запрос на хранение', 'Нужно дополнительное место для мелких товаров', '2025-04-02', 2, 2, 2, 2, 3);
