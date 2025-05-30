@@ -10,4 +10,5 @@ public interface ShelfService {
     ShelfDto getShelfById(Long id);
     ShelfWithCellDto getAllCellsByShelfId(Long id);
     List<ShelfWithCellDto> getAllCellsByAllShelves();
+    List<ShelfWithCellDto> getShelvesByLineId(Long id);
 }

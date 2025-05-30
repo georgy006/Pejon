@@ -2,8 +2,6 @@ package com.example.pejon.controller;
 
 import com.example.pejon.model.dto.ShelfDto;
 import com.example.pejon.model.dto.ShelfWithCellDto;
-import com.example.pejon.model.dto.ZoneDto;
-import com.example.pejon.model.dto.ZoneWithCellDto;
 import com.example.pejon.service.ShelfService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,5 +33,9 @@ public class ShelfController {
     @GetMapping("/cells")
     public List<ShelfWithCellDto>  getAllCellsByAllShelves(){
         return shelfService.getAllCellsByAllShelves();
+    }
+    @GetMapping("/line/{id}")
+    public List<ShelfWithCellDto>  getShelvesByLineId(@PathVariable Long id){
+        return shelfService.getShelvesByLineId(id);
     }
 }

@@ -48,4 +48,12 @@ public class ShelfServiceImpl implements ShelfService {
                 .map(shelfConvertor::convertToShelfWithCellDto)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<ShelfWithCellDto> getShelvesByLineId(Long id) {
+        List<Shelf> shelves = shelfRepository.findByLineId(id);
+        return shelves.stream()
+                .map(shelfConvertor::convertToShelfWithCellDto)
+                .collect(Collectors.toList());
+    }
 }
