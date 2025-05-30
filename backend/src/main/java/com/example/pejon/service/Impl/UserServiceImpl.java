@@ -52,14 +52,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto updateUserById(Long id, User user) {
-        Optional<User> updateUser = userRepository.findById(id);
-        updateUser.get().setName(user.getName());
-        updateUser.get().setLogin(user.getLogin());
-        updateUser.get().setPassword(user.getPassword());
-        updateUser.get().setRole(user.getRole());
-        userRepository.save(updateUser.get());
+    public UserDto updateUserById(Long id, UserCreateDto userCreateDto) {
+        Role role = roleRepository.findById(userCreateDto.roleId())
+                .orElseThrow(() -> new RuntimeException("Role с id " + id + " не найдено"));
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User с id " + id + " не найдено"));
+        user.setName(userCreateDto.name());
+        user.setLogin(userCreateDto.login());
+        user.setPassword(userCreateDto.password());
+        user.setRole(role);
+        userRepository.save(user);
 
-        return userConvertor.convertToUserDto(updateUser.get());
+        return userConvertor.convertToUserDto(user);
     }
 }
