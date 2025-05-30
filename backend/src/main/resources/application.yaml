@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    format_sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pejon_new_db
+    username: postgres
+    password: pgpwd4
+    driver-class-name: org.postgresql.Driver
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  liquibase:
+    change-log: classpath:db/changelog/changelog-root.yaml
+    enabled: true
