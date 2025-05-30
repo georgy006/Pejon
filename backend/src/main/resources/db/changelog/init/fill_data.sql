@@ -1,7 +1,7 @@
 -- Заполнение таблицы warehouse (Склады)
-INSERT INTO warehouse (name, count_line) VALUES
-('Склад 1', 3),
-('Склад 2', 2);
+INSERT INTO warehouse (name) VALUES
+('Склад 1'),
+('Склад 2');
 
 -- Заполнение таблицы line (Линии)
 INSERT INTO line (name, count_shelf, warehouse_id) VALUES

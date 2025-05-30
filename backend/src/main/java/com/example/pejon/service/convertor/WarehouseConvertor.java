@@ -30,7 +30,6 @@ public class WarehouseConvertor {
         return new WarehouseDto(
                 warehouse.getId(),
                 warehouse.getName(),
-                warehouse.getCountLine(),
                 zones.stream()
                         .map(zoneConvertor::convertToZoneDto)
                         .collect(Collectors.toList()),
