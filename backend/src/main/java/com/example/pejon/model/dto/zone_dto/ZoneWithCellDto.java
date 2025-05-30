@@ -1,6 +1,6 @@
 package com.example.pejon.model.dto.zone_dto;
 
-import com.example.pejon.model.dto.CellDto;
+import com.example.pejon.model.dto.cell_dto.CellDto;
 
 import java.util.List;
 

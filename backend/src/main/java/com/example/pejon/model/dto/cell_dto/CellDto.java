@@ -1,4 +1,4 @@
-package com.example.pejon.model.dto;
+package com.example.pejon.model.dto.cell_dto;
 
 import com.example.pejon.model.Storage;
 import com.example.pejon.model.TransportContainer;
