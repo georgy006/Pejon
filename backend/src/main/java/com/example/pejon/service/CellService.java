@@ -10,4 +10,5 @@ public interface CellService {
     CellDto getCellById(Long id);
     CellDto addCellByStorageId(Long storageId, CellCreateDto cellCreateDto);
     CellDto updateCellById(Long id, CellCreateDto cellCreateDto);
+
 }

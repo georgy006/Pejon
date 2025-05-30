@@ -69,7 +69,7 @@ public class WarehouseServiceImpl implements WarehouseService {
     }
 
     @Override
-    public WarehouseDto createWarehouse(Warehouse warehouse) {
+    public WarehouseDto addWarehouse(Warehouse warehouse) {
         warehouseRepository.save(warehouse);
         return warehouseConvertor.convertToWarehouseDto(warehouse);
     }

@@ -14,6 +14,6 @@ public interface WarehouseService {
     WarehouseDto getWarehouseById(Long id);
     List<LineDto> getLinesByWarehouseId(Long id);
     List<ZoneDto> getZoneByWarehouseId(Long id);
-    WarehouseDto createWarehouse(Warehouse warehouse);
+    WarehouseDto addWarehouse(Warehouse warehouse);
 
 }

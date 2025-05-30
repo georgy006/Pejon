@@ -33,7 +33,7 @@ public class WarehouseController {
         return warehouseService.getZoneByWarehouseId(id);
     }
     @PostMapping
-    public WarehouseDto createWarehouse(@RequestBody Warehouse warehouse){
-        return warehouseService.createWarehouse(warehouse);
+    public WarehouseDto addWarehouse(@RequestBody Warehouse warehouse){
+        return warehouseService.addWarehouse(warehouse);
     }
 }
