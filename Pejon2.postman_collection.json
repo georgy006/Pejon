@@ -381,6 +381,88 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Line",
+			"item": [
+				{
+					"name": "getAllLines",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/line/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"line",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLineById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/line/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"line",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCellsByLineId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/line/3/cells",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"line",
+								"3",
+								"cells"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCellsByAllLines",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/line/cells",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"line",
+								"cells"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
