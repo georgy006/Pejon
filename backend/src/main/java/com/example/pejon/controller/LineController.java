@@ -1,14 +1,13 @@
 package com.example.pejon.controller;
 
+import com.example.pejon.model.dto.line_dto.LineCreateDto;
 import com.example.pejon.model.dto.line_dto.LineDto;
 import com.example.pejon.model.dto.line_dto.LineWithCellDto;
 import com.example.pejon.model.dto.line_dto.LineWithShelvesDto;
 import com.example.pejon.service.LineService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,5 +34,17 @@ public class LineController {
     public List<LineWithCellDto>  getAllCellsByAllLines(){
         return lineService.getAllCellsByAllLines();
     }
-
+    @PostMapping
+    public LineDto addLine(@RequestBody LineCreateDto lineCreateDto){
+        return lineService.addLine(lineCreateDto);
+    }
+    @PostMapping("/{id}")
+    public LineDto updateLineById(@PathVariable Long id, @RequestBody LineCreateDto lineCreateDto){
+        return lineService.updateLineById(id, lineCreateDto);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteLineById(@PathVariable Long id){
+        lineService.deleteLineById(id);
+        return ResponseEntity.ok("Линия удалена");
+    }
 }
