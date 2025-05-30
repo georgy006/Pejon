@@ -1,5 +1,6 @@
 package com.example.pejon.service.Impl;
 
+import com.example.pejon.model.Role;
 import com.example.pejon.model.Status;
 import com.example.pejon.model.Type;
 import com.example.pejon.repository.StatusRepository;
@@ -41,5 +42,12 @@ public class StatusServiceImpl implements StatusService {
 
         statusRepository.save(s);
         return s;
+    }
+
+    @Override
+    public void deleteStatusById(Long id) {
+        Status status = statusRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Role не найден: " + id));
+        statusRepository.delete(status);
     }
 }

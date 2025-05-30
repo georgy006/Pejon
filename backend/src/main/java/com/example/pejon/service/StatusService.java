@@ -10,4 +10,6 @@ public interface StatusService {
     Status getStatusById(Long id);
     Status addStatus(Status type);
     Status updateStatusById(Long id, Status type);
+    void deleteStatusById(Long id);
+
 }

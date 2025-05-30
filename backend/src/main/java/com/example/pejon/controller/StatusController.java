@@ -4,6 +4,7 @@ import com.example.pejon.model.Status;
 import com.example.pejon.model.Type;
 import com.example.pejon.service.StatusService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,5 +30,10 @@ public class StatusController {
     @PostMapping("/{id}")
     public Status updateStatusById(@PathVariable Long id, @RequestBody Status status) {
         return statusService.updateStatusById(id, status);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteStatusById(@PathVariable Long id) {
+        statusService.deleteStatusById(id);
+        return ResponseEntity.ok("Статус удален");
     }
 }
