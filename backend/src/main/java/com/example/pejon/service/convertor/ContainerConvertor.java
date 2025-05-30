@@ -2,8 +2,8 @@ package com.example.pejon.service.convertor;
 
 import com.example.pejon.model.Cell;
 import com.example.pejon.model.Container;
-import com.example.pejon.model.dto.ContainerDto;
-import com.example.pejon.model.dto.ContainerWithCellDto;
+import com.example.pejon.model.dto.container_dto.ContainerDto;
+import com.example.pejon.model.dto.container_dto.ContainerWithCellDto;
 import com.example.pejon.repository.CellRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

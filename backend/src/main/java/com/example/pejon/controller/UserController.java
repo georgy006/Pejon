@@ -1,8 +1,8 @@
 package com.example.pejon.controller;
 
 import com.example.pejon.model.User;
-import com.example.pejon.model.dto.CreateUserDto;
-import com.example.pejon.model.dto.UserDto;
+import com.example.pejon.model.dto.user_dto.UserCreateDto;
+import com.example.pejon.model.dto.user_dto.UserDto;
 import com.example.pejon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +24,7 @@ public class UserController {
         return userService.getUserById(id);
     }
     @PostMapping("/")
-    public UserDto createUser(@RequestBody CreateUserDto user) {
+    public UserDto createUser(@RequestBody UserCreateDto user) {
         return userService.createUser(user);
     }
     @PostMapping("/{id}")

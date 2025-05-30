@@ -1,8 +1,8 @@
 package com.example.pejon.service;
 
 import com.example.pejon.model.User;
-import com.example.pejon.model.dto.CreateUserDto;
-import com.example.pejon.model.dto.UserDto;
+import com.example.pejon.model.dto.user_dto.UserCreateDto;
+import com.example.pejon.model.dto.user_dto.UserDto;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public interface UserService {
 
     List<UserDto> getUsers();
 
-    UserDto createUser(CreateUserDto user);
+    UserDto createUser(UserCreateDto user);
 
     UserDto updateUserById(Long id, User user);
 }

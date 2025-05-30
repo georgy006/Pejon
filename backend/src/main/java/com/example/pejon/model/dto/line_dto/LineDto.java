@@ -1,4 +1,4 @@
-package com.example.pejon.model.dto;
+package com.example.pejon.model.dto.line_dto;
 
 
 public record LineDto(

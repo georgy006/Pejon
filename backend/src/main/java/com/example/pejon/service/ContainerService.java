@@ -1,8 +1,7 @@
 package com.example.pejon.service;
 
-import com.example.pejon.model.dto.CellDto;
-import com.example.pejon.model.dto.ContainerDto;
-import com.example.pejon.model.dto.ContainerWithCellDto;
+import com.example.pejon.model.dto.container_dto.ContainerDto;
+import com.example.pejon.model.dto.container_dto.ContainerWithCellDto;
 
 import java.util.List;
 

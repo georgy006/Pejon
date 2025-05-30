@@ -2,8 +2,8 @@ package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Role;
 import com.example.pejon.model.User;
-import com.example.pejon.model.dto.CreateUserDto;
-import com.example.pejon.model.dto.UserDto;
+import com.example.pejon.model.dto.user_dto.UserCreateDto;
+import com.example.pejon.model.dto.user_dto.UserDto;
 import com.example.pejon.repository.RoleRepository;
 import com.example.pejon.repository.UserRepository;
 import com.example.pejon.service.UserService;
@@ -39,13 +39,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto createUser(CreateUserDto createUserDto) {
+    public UserDto createUser(UserCreateDto userCreateDto) {
         User user = new User();
-        user.setName(createUserDto.name());
-        user.setLogin(createUserDto.login());
-        user.setPassword(createUserDto.password());
-        Role role = roleRepository.findById(createUserDto.roleId())
-                .orElseThrow(() -> new RuntimeException("Роль с id " + createUserDto.roleId() + " не найдена"));
+        user.setName(userCreateDto.name());
+        user.setLogin(userCreateDto.login());
+        user.setPassword(userCreateDto.password());
+        Role role = roleRepository.findById(userCreateDto.roleId())
+                .orElseThrow(() -> new RuntimeException("Роль с id " + userCreateDto.roleId() + " не найдена"));
         user.setRole(role);
         userRepository.save(user);
         return userConvertor.convertToUserDto(user);

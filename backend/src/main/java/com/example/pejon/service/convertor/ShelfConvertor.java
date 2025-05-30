@@ -2,8 +2,8 @@ package com.example.pejon.service.convertor;
 
 import com.example.pejon.model.Cell;
 import com.example.pejon.model.Shelf;
-import com.example.pejon.model.dto.ShelfDto;
-import com.example.pejon.model.dto.ShelfWithCellDto;
+import com.example.pejon.model.dto.shelf_dto.ShelfDto;
+import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
 import com.example.pejon.repository.CellRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

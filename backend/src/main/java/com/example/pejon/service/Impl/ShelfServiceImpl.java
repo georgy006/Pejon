@@ -1,8 +1,8 @@
 package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Shelf;
-import com.example.pejon.model.dto.ShelfDto;
-import com.example.pejon.model.dto.ShelfWithCellDto;
+import com.example.pejon.model.dto.shelf_dto.ShelfDto;
+import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
 import com.example.pejon.repository.ShelfRepository;
 import com.example.pejon.service.ShelfService;
 import com.example.pejon.service.convertor.ShelfConvertor;

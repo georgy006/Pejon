@@ -1,4 +1,4 @@
-package com.example.pejon.model.dto;
+package com.example.pejon.model.dto.user_dto;
 
 import com.example.pejon.model.Role;
 

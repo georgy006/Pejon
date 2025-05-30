@@ -1,6 +1,6 @@
-package com.example.pejon.model.dto;
+package com.example.pejon.model.dto.user_dto;
 
-public record CreateUserDto (
+public record UserCreateDto(
         Long id,
         String name,
         String login,

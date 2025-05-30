@@ -1,7 +1,7 @@
 package com.example.pejon.controller;
 
-import com.example.pejon.model.dto.ShelfDto;
-import com.example.pejon.model.dto.ShelfWithCellDto;
+import com.example.pejon.model.dto.shelf_dto.ShelfDto;
+import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
 import com.example.pejon.service.ShelfService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

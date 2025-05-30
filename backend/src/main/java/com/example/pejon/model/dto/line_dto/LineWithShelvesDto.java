@@ -1,4 +1,6 @@
-package com.example.pejon.model.dto;
+package com.example.pejon.model.dto.line_dto;
+
+import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
 
 import java.util.List;
 

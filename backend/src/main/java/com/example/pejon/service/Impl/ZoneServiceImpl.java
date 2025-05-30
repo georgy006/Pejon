@@ -1,8 +1,8 @@
 package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Zone;
-import com.example.pejon.model.dto.ZoneDto;
-import com.example.pejon.model.dto.ZoneWithCellDto;
+import com.example.pejon.model.dto.zone_dto.ZoneDto;
+import com.example.pejon.model.dto.zone_dto.ZoneWithCellDto;
 import com.example.pejon.repository.ZoneRepository;
 import com.example.pejon.service.ZoneService;
 import com.example.pejon.service.convertor.ZoneConvertor;

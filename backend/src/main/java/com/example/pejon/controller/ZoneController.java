@@ -1,9 +1,7 @@
 package com.example.pejon.controller;
 
-import com.example.pejon.model.dto.ContainerDto;
-import com.example.pejon.model.dto.ContainerWithCellDto;
-import com.example.pejon.model.dto.ZoneDto;
-import com.example.pejon.model.dto.ZoneWithCellDto;
+import com.example.pejon.model.dto.zone_dto.ZoneDto;
+import com.example.pejon.model.dto.zone_dto.ZoneWithCellDto;
 import com.example.pejon.service.ZoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

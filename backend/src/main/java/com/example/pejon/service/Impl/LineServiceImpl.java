@@ -1,10 +1,9 @@
 package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Line;
-import com.example.pejon.model.Shelf;
-import com.example.pejon.model.dto.LineDto;
-import com.example.pejon.model.dto.LineWithCellDto;
-import com.example.pejon.model.dto.LineWithShelvesDto;
+import com.example.pejon.model.dto.line_dto.LineDto;
+import com.example.pejon.model.dto.line_dto.LineWithCellDto;
+import com.example.pejon.model.dto.line_dto.LineWithShelvesDto;
 import com.example.pejon.repository.LinesRepository;
 import com.example.pejon.service.LineService;
 import com.example.pejon.service.convertor.LineConvertor;

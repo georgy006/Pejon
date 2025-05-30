@@ -1,8 +1,8 @@
 package com.example.pejon.service;
 
-import com.example.pejon.model.dto.LineDto;
-import com.example.pejon.model.dto.LineWithCellDto;
-import com.example.pejon.model.dto.LineWithShelvesDto;
+import com.example.pejon.model.dto.line_dto.LineDto;
+import com.example.pejon.model.dto.line_dto.LineWithCellDto;
+import com.example.pejon.model.dto.line_dto.LineWithShelvesDto;
 
 
 import java.util.List;
