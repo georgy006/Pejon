@@ -73,4 +73,20 @@ public class WarehouseServiceImpl implements WarehouseService {
         warehouseRepository.save(warehouse);
         return warehouseConvertor.convertToWarehouseDto(warehouse);
     }
+
+    @Override
+    public WarehouseDto updateWarehouse(Long id, Warehouse warehouse) {
+        Warehouse wh = warehouseRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Склад не найден: " + id));
+        wh.setName(warehouse.getName());
+        warehouseRepository.save(wh);
+        return warehouseConvertor.convertToWarehouseDto(wh);
+    }
+
+    @Override
+    public void deleteWarehouseById(Long id) {
+        Warehouse wh = warehouseRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Склад не найден: " + id));
+        warehouseRepository.delete(wh);
+    }
 }

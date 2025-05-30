@@ -15,5 +15,7 @@ public interface WarehouseService {
     List<LineDto> getLinesByWarehouseId(Long id);
     List<ZoneDto> getZoneByWarehouseId(Long id);
     WarehouseDto addWarehouse(Warehouse warehouse);
+    WarehouseDto updateWarehouse(Long id, Warehouse warehouse);
+    void deleteWarehouseById(Long id);
 
 }
