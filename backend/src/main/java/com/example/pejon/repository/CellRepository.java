@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface CellRepository extends JpaRepository<Cell, Long> {
     List<Cell> findAllByStorage_Id(Long storageId);
+
 }

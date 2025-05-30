@@ -1,9 +1,6 @@
 package com.example.pejon.controller;
 
-import com.example.pejon.model.dto.LineDto;
-import com.example.pejon.model.dto.LineWithCellDto;
-import com.example.pejon.model.dto.ShelfDto;
-import com.example.pejon.model.dto.ShelfWithCellDto;
+import com.example.pejon.model.dto.*;
 import com.example.pejon.service.LineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +21,7 @@ public class LineController {
         return lineService.getAllLine();
     }
     @GetMapping("/{id}")
-    public LineDto getLineById(@PathVariable Long id){
+    public LineWithShelvesDto getLineById(@PathVariable Long id){
         return lineService.getLineById(id);
     }
 

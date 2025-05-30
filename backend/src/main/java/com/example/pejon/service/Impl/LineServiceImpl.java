@@ -1,8 +1,10 @@
 package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Line;
+import com.example.pejon.model.Shelf;
 import com.example.pejon.model.dto.LineDto;
 import com.example.pejon.model.dto.LineWithCellDto;
+import com.example.pejon.model.dto.LineWithShelvesDto;
 import com.example.pejon.repository.LinesRepository;
 import com.example.pejon.service.LineService;
 import com.example.pejon.service.convertor.LineConvertor;
@@ -30,9 +32,9 @@ public class LineServiceImpl implements LineService {
     }
 
     @Override
-    public LineDto getLineById(Long id) {
+    public LineWithShelvesDto getLineById(Long id) {
         Optional<Line> line = linesRepository.findById(id);
-        return lineConvertor.convertToLineDto(line.get());
+        return lineConvertor.convertToLineWithShelvesDto(line.get());
     }
 
     @Override
