@@ -34,14 +34,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/warehouse/1",
+							"raw": "localhost:8080/warehouse/7",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"warehouse",
-								"1"
+								"7"
 							]
 						}
 					},
@@ -94,7 +94,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Склад Никитич\"\n}",
+							"raw": "{\n    \"name\": \"Склад 6\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -457,14 +457,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/line/2",
+							"raw": "localhost:8080/line/5",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"line",
-								"2"
+								"5"
 							]
 						}
 					},
