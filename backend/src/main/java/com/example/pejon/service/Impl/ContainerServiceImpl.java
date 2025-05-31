@@ -1,6 +1,7 @@
 package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Container;
+import com.example.pejon.model.dto.container_dto.ContainerCreateDto;
 import com.example.pejon.model.dto.container_dto.ContainerDto;
 import com.example.pejon.model.dto.container_dto.ContainerWithCellDto;
 import com.example.pejon.repository.ContainerRepository;
@@ -48,5 +49,33 @@ public class ContainerServiceImpl implements ContainerService {
         return containers.stream()
                 .map(containerConvertor::convertToContainerWithCellDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public ContainerDto addContainer(ContainerCreateDto containerCreateDto) {
+        Container container = new Container();
+        container.setName(containerCreateDto.name());
+        container.setCapacity(containerCreateDto.capacity());
+        containerRepository.save(container);
+        return containerConvertor.convertToContainerDto(container);
+    }
+
+    @Override
+    public ContainerDto updateContainerById(Long id, ContainerCreateDto containerCreateDto) {
+        Container container = containerRepository.findById(id)
+                .orElseThrow(()->new RuntimeException("Не найден"));
+
+        container.setName(containerCreateDto.name());
+        container.setCapacity(containerCreateDto.capacity());
+
+        containerRepository.save(container);
+        return containerConvertor.convertToContainerDto(container);
+    }
+
+    @Override
+    public void deleteContainerById(Long id) {
+        Container container = containerRepository.findById(id)
+                .orElseThrow(()->new RuntimeException("Не найден"));
+        containerRepository.delete(container);
     }
 }
