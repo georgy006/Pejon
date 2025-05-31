@@ -1463,6 +1463,272 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Cell",
+			"item": [
+				{
+					"name": "getAllCell",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cell/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cell",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCellById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cell/15",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cell",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCell",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Рычаг\",\n    \"description\": \"Вася поставит\",\n    \"transportContainerId\": 2,\n    \"storageId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/cell",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cell"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCellById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Рычаг\",\n    \"description\": \"Вася и Федя поставит\",\n    \"transportContainerId\": 2,\n    \"storageId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/cell/183",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cell",
+								"183"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clearCellById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cell/183/clear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cell",
+								"183",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCellById",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "getAllApplication",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getApplicationById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addApplication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Рычаг\",\n    \"description\": \"Вася поставит\",\n    \"data\": \"12.12.12\",\n    \"typeId\": 1,\n    \"cellId\": 1,\n    \"statusId\": 1,\n    \"authorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/application",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateApplicationById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Заказ\",\n    \"description\": \"В Москву\",\n    \"data\": \"12.12.12\",\n    \"typeId\": 1,\n    \"cellId\": 20,\n    \"statusId\": 1,\n    \"authorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/application/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateApplicationById Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/5/approved/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"5",
+								"approved",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateApplicationById Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/5/approved/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"5",
+								"approved",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
