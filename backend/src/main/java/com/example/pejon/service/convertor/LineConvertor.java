@@ -29,8 +29,7 @@ public class LineConvertor {
     public LineDto convertToLineDto(Line line){
         return new LineDto(
                 line.getId(),
-                line.getName(),
-                line.getCountShelf()
+                line.getName()
         );
     }
     public LineWithCellDto convertToLineWithCellDto(Line line){
@@ -41,7 +40,6 @@ public class LineConvertor {
         return new LineWithShelvesDto(
                 line.getId(),
                 line.getName(),
-                line.getCountShelf(),
                 shelves.stream()
                         .map(shelfConvertor::convertToShelfWithCellDto)
                         .collect(Collectors.toList())

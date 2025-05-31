@@ -7,7 +7,6 @@ CREATE TABLE warehouse (
 CREATE TABLE line (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255),
-    count_shelf INT,
     warehouse_id BIGINT
 );
 

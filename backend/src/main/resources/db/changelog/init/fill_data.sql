@@ -4,16 +4,16 @@ INSERT INTO warehouse (name) VALUES
 ('Склад 2');
 
 -- Заполнение таблицы line (Линии)
-INSERT INTO line (name, count_shelf, warehouse_id) VALUES
-('Линия A1', 5, 1),
-('Линия B1', 4, 1),
-('Линия C1', 3, 1),
-('Линия D1', 6, 1),
+INSERT INTO line (name, warehouse_id) VALUES
+('Линия A1', 1),
+('Линия B1', 1),
+('Линия C1', 1),
+('Линия D1', 1),
 
-('Линия A2', 5, 2),
-('Линия B2', 4, 2),
-('Линия C2', 3, 2),
-('Линия D2', 6, 2);
+('Линия A2', 2),
+('Линия B2', 2),
+('Линия C2', 2),
+('Линия D2', 2);
 
 -- Заполнение таблицы storage (Хранилища)
 INSERT INTO storage (name, capacity) VALUES

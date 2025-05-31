@@ -60,7 +60,6 @@ public class LineServiceImpl implements LineService {
 
         Line line = new Line();
         line.setName(lineCreateDto.name());
-        line.setCountShelf(lineCreateDto.count());
         line.setWarehouse(warehouse);
         linesRepository.save(line);
         return lineConvertor.convertToLineDto(line);
@@ -74,7 +73,6 @@ public class LineServiceImpl implements LineService {
         Line line = linesRepository.findById(id)
                         .orElseThrow(()-> new RuntimeException("Line не найден"));
         line.setName(lineCreateDto.name());
-        line.setCountShelf(lineCreateDto.count());
         line.setWarehouse(warehouse);
         linesRepository.save(line);
         return lineConvertor.convertToLineDto(line);

@@ -15,7 +15,6 @@ public class Line {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Integer countShelf;
 
     @ManyToOne
     @JoinColumn(name = "warehouse_id")
