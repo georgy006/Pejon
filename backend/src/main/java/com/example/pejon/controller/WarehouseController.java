@@ -43,8 +43,7 @@ public class WarehouseController {
         return warehouseService.updateWarehouse(id, warehouse);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteWarehouseById(@PathVariable Long id) {
+    public void deleteWarehouseById(@PathVariable Long id) {
         warehouseService.deleteWarehouseById(id);
-        return ResponseEntity.ok("Склад удален");
     }
 }

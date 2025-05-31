@@ -29,4 +29,8 @@ public class TypeController {
     public Type updateTypeById(@PathVariable Long id, @RequestBody Type type) {
         return typeService.updateTypeById(id, type);
     }
+    @DeleteMapping("/{id}")
+    public void d(@PathVariable Long id){
+        typeService.deleteTypeById(id);
+    }
 }

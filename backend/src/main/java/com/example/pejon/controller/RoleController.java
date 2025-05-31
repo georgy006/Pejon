@@ -32,8 +32,7 @@ public class RoleController {
         return roleService.updateRoleById(id, role);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteRoleById(@PathVariable Long id) {
+    public void deleteRoleById(@PathVariable Long id) {
         roleService.deleteRoleById(id);
-        return ResponseEntity.ok("Роль удалена");
     }
 }

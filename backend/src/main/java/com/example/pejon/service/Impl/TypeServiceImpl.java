@@ -41,4 +41,11 @@ public class TypeServiceImpl implements TypeService {
         typeRepository.save(t);
         return t;
     }
+
+    @Override
+    public void deleteTypeById(Long id) {
+        Type type = typeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Type не найден: " + id));
+        typeRepository.delete(type);
+    }
 }

@@ -32,8 +32,7 @@ public class StatusController {
         return statusService.updateStatusById(id, status);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteStatusById(@PathVariable Long id) {
+    public void deleteStatusById(@PathVariable Long id) {
         statusService.deleteStatusById(id);
-        return ResponseEntity.ok("Статус удален");
     }
 }

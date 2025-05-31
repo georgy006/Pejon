@@ -9,4 +9,5 @@ public interface TypeService {
     Type getTypeById(Long id);
     Type addType(Type type);
     Type updateTypeById(Long id, Type type);
+    void deleteTypeById(Long id);
 }
