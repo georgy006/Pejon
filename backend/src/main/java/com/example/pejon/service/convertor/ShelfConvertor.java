@@ -22,7 +22,8 @@ public class ShelfConvertor {
     public ShelfDto convertToShelfDto(Shelf shelf){
         return new ShelfDto(
                 shelf.getId(),
-                shelf.getName()
+                shelf.getName(),
+                shelf.getCapacity()
         );
     }
     public ShelfWithCellDto convertToShelfWithCellDto(Shelf shelf){

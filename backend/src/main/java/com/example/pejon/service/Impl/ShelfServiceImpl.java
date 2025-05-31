@@ -1,10 +1,12 @@
 package com.example.pejon.service.Impl;
 
+import com.example.pejon.model.Cell;
 import com.example.pejon.model.Line;
 import com.example.pejon.model.Shelf;
 import com.example.pejon.model.dto.shelf_dto.ShelfCreateDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
+import com.example.pejon.repository.CellRepository;
 import com.example.pejon.repository.LinesRepository;
 import com.example.pejon.repository.ShelfRepository;
 import com.example.pejon.service.ShelfService;
@@ -25,6 +27,8 @@ public class ShelfServiceImpl implements ShelfService {
 
     @Autowired
     ShelfConvertor shelfConvertor;
+    @Autowired
+    CellRepository cellRepository;
 
     @Override
     public List<ShelfDto> getAllShelves() {
@@ -72,8 +76,24 @@ public class ShelfServiceImpl implements ShelfService {
         shelf.setCapacity(shelfCreateDto.capacity());
         shelf.setLine(line);
         shelfRepository.save(shelf);
+
+        createCellByShelf(shelf,shelf.getCapacity());
+
         return shelfConvertor.convertToShelfDto(shelf);
     }
+    private void createCellByShelf(Shelf shelf, int count){
+        if(count > 50){ count = 50;}
+
+        for (int i = 0; i < count; i++) {
+            Cell cell = new Cell();
+            cell.setName("");
+            cell.setDescription("");
+            cell.setTransportContainer(null);
+            cell.setStorage(shelf);
+            cellRepository.save(cell);
+        }
+    }
+
 
     @Override
     public ShelfDto updateShelfById(Long id, ShelfCreateDto shelfCreateDto) {

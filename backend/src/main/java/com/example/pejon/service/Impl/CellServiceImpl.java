@@ -1,18 +1,20 @@
 package com.example.pejon.service.Impl;
 
+import com.example.pejon.model.Application;
 import com.example.pejon.model.Cell;
 import com.example.pejon.model.Storage;
 import com.example.pejon.model.TransportContainer;
+import com.example.pejon.model.dto.application_dto.ApplicationCreateDto;
 import com.example.pejon.model.dto.cell_dto.CellCreateDto;
 import com.example.pejon.model.dto.cell_dto.CellDto;
-import com.example.pejon.repository.CellRepository;
-import com.example.pejon.repository.StorageRepository;
-import com.example.pejon.repository.TransportContainerRepository;
+import com.example.pejon.repository.*;
+import com.example.pejon.service.ApplicationService;
 import com.example.pejon.service.CellService;
 import com.example.pejon.service.convertor.CellConvertor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -23,9 +25,15 @@ public class CellServiceImpl implements CellService {
     @Autowired
     CellRepository cellRepository;
     @Autowired
+    ApplicationService applicationService;
+    @Autowired
     TransportContainerRepository transportContainerRepository;
     @Autowired
     StorageRepository storageRepository;
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    ApplicationRepository applicationRepository;
 
     @Autowired
     CellConvertor cellConvertor;
@@ -119,4 +127,21 @@ public class CellServiceImpl implements CellService {
                 .orElseThrow(()->new RuntimeException("Не найдено"));
         cellRepository.delete(cell);
     }
+
+
+//    private Application createApplication(Cell cell, Long userId){
+//        Date date = new Date();
+//        Application application = new Application();
+//        application.setTitle("Изменение ячейки ");
+//        application.setDescription(null);
+//        application.setData(date.toString());
+//        application.setType(null);
+//        application.setCell(cell);
+//        application.setStatus(null);
+//        application.setAuthor(userRepository.findById(userId)
+//                .orElseThrow(()-> new RuntimeException("Не найден")));
+//        application.setApprover(null);
+//        applicationRepository.save(application);
+//        return application;
+//    }
 }
