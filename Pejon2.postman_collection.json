@@ -1665,7 +1665,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Заказ\",\n    \"description\": \"В Москву\",\n    \"data\": \"12.12.12\",\n    \"typeId\": 1,\n    \"cellId\": 20,\n    \"statusId\": 1,\n    \"authorId\": 1\n}",
+							"raw": "{\n    \"title\": \"Заказ\",\n    \"description\": \"В Москву\",\n    \"data\": \"12.12.12\",\n    \"typeId\": 1,\n    \"cellId\": 20,\n    \"statusId\": 2,\n    \"authorId\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1673,14 +1673,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/application/5",
+							"raw": "localhost:8080/application/4",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"application",
-								"5"
+								"4"
 							]
 						}
 					},
