@@ -1,13 +1,11 @@
 package com.example.pejon.service.Impl;
 
-import com.example.pejon.model.Line;
-import com.example.pejon.model.Warehouse;
+import com.example.pejon.model.*;
 import com.example.pejon.model.dto.line_dto.LineCreateDto;
 import com.example.pejon.model.dto.line_dto.LineDto;
 import com.example.pejon.model.dto.line_dto.LineWithCellDto;
 import com.example.pejon.model.dto.line_dto.LineWithShelvesDto;
-import com.example.pejon.repository.LinesRepository;
-import com.example.pejon.repository.WarehouseRepository;
+import com.example.pejon.repository.*;
 import com.example.pejon.service.LineService;
 import com.example.pejon.service.convertor.LineConvertor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,6 +86,5 @@ public class LineServiceImpl implements LineService {
                 .orElseThrow(()-> new RuntimeException("Line не найден"));
         linesRepository.delete(line);
     }
-
 
 }

@@ -42,6 +42,7 @@ public class LineController {
     public LineDto updateLineById(@PathVariable Long id, @RequestBody LineCreateDto lineCreateDto){
         return lineService.updateLineById(id, lineCreateDto);
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteLineById(@PathVariable Long id){
         lineService.deleteLineById(id);
