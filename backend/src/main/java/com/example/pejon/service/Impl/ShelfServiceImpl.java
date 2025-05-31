@@ -1,8 +1,11 @@
 package com.example.pejon.service.Impl;
 
+import com.example.pejon.model.Line;
 import com.example.pejon.model.Shelf;
+import com.example.pejon.model.dto.shelf_dto.ShelfCreateDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
+import com.example.pejon.repository.LinesRepository;
 import com.example.pejon.repository.ShelfRepository;
 import com.example.pejon.service.ShelfService;
 import com.example.pejon.service.convertor.ShelfConvertor;
@@ -17,6 +20,8 @@ import java.util.stream.Collectors;
 public class ShelfServiceImpl implements ShelfService {
     @Autowired
     ShelfRepository shelfRepository;
+    @Autowired
+    LinesRepository linesRepository;
 
     @Autowired
     ShelfConvertor shelfConvertor;
@@ -55,5 +60,41 @@ public class ShelfServiceImpl implements ShelfService {
         return shelves.stream()
                 .map(shelfConvertor::convertToShelfWithCellDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public ShelfDto addShelf(ShelfCreateDto shelfCreateDto) {
+        Line line = linesRepository.findById(shelfCreateDto.lineId())
+                .orElseThrow(()-> new RuntimeException("Line Не найдено"));
+
+        Shelf shelf = new Shelf();
+        shelf.setName(shelfCreateDto.name());
+        shelf.setCapacity(shelfCreateDto.capacity());
+        shelf.setLine(line);
+        shelfRepository.save(shelf);
+        return shelfConvertor.convertToShelfDto(shelf);
+    }
+
+    @Override
+    public ShelfDto updateShelfById(Long id, ShelfCreateDto shelfCreateDto) {
+        Line line = linesRepository.findById(shelfCreateDto.lineId())
+                .orElseThrow(()-> new RuntimeException("Line Не найдено"));
+
+        Shelf shelf = shelfRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Shelf Не найдено"));
+
+        shelf.setName(shelfCreateDto.name());
+        shelf.setCapacity(shelfCreateDto.capacity());
+        shelf.setLine(line);
+        shelfRepository.save(shelf);
+        return shelfConvertor.convertToShelfDto(shelf);
+    }
+
+    @Override
+    public void deleteShelfById(Long id) {
+        Shelf shelf = shelfRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Shelf Не найдено"));
+        shelfRepository.delete(shelf);
+
     }
 }

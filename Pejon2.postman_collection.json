@@ -722,6 +722,154 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "addShelf",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Шкаф\",\n    \"capacity\": 30,\n    \"lineId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/shelf",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateShelfById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Шкаф 1\",\n    \"capacity\": 30,\n    \"lineId\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/shelf/36",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteShelfById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/shelf/34",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addShelf",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Шкаф\",\n    \"capacity\": 30,\n    \"lineId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/shelf",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateShelfById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Шкаф 1\",\n    \"capacity\": 30,\n    \"lineId\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/shelf/36",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteShelfById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/shelf/34",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shelf",
+								"34"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
