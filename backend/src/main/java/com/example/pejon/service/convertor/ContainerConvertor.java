@@ -23,7 +23,8 @@ public class ContainerConvertor {
     public ContainerDto convertToContainerDto(Container container){
         return new ContainerDto(
                 container.getId(),
-                container.getName()
+                container.getName(),
+                container.getCapacity()
         );
     }
     public ContainerWithCellDto convertToContainerWithCellDto(Container container){
