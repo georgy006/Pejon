@@ -31,7 +31,7 @@ public class WarehouseController {
         return warehouseService.getLinesByWarehouseId(id);
     }
     @GetMapping("/{id}/zones")
-    public List<ZoneDto> getFloorsByWarehouseId(@PathVariable Long id){
+    public List<ZoneDto> getZoneByWarehouseId(@PathVariable Long id){
         return warehouseService.getZoneByWarehouseId(id);
     }
     @PostMapping

@@ -21,7 +21,8 @@ public class ZoneConvertor {
     public ZoneDto convertToZoneDto(Zone zone){
         return new ZoneDto(
                 zone.getId(),
-                zone.getName()
+                zone.getName(),
+                zone.getCapacity()
         );
     }
     public ZoneWithCellDto convertToZoneWithCellDto(Zone zone){
