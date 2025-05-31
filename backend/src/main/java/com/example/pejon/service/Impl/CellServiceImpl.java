@@ -62,17 +62,61 @@ public class CellServiceImpl implements CellService {
     }
 
     @Override
+    public CellDto addCell(CellCreateDto cellCreateDto) {
+        TransportContainer transportContainer = transportContainerRepository.findById(cellCreateDto.transportContainerId())
+                .orElseThrow(() -> new RuntimeException("TransportContainer не найдено"));
+        Storage storage = storageRepository.findById(cellCreateDto.storageId())
+                .orElseThrow(() -> new RuntimeException("Storage не найдено"));
+        Cell cell = new Cell();
+        cell.setName(cellCreateDto.name());
+        cell.setDescription(cellCreateDto.description());
+        cell.setTransportContainer(transportContainer);
+        cell.setStorage(storage);
+
+        cellRepository.save(cell);
+        return cellConvertor.convertToCellDto(cell);
+    }
+
+    @Override
     public CellDto updateCellById(Long id, CellCreateDto cellCreateDto) {
         Storage storage = storageRepository.findById(cellCreateDto.storageId())
                 .orElseThrow(() -> new RuntimeException("Storage не найдено"));
 
         Cell cell = cellRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Cell не найдено: " + id));
+        TransportContainer transportContainer = transportContainerRepository.findById(cellCreateDto.transportContainerId())
+                        .orElseThrow(()-> new RuntimeException("TransportContainer не найдено"));
+
         cell.setName(cellCreateDto.name());
         cell.setDescription(cellCreateDto.description());
+        cell.setTransportContainer(transportContainer);
         cell.setStorage(storage);
 
         cellRepository.save(cell);
         return cellConvertor.convertToCellDto(cell);
+    }
+
+    @Override
+    public CellDto clearCellById(Long id) {
+        Cell cell = cellRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cell не найдено: " + id));
+
+        Storage storage = storageRepository.findById(cell.getStorage().getId())
+                .orElseThrow(() -> new RuntimeException("Storage не найдено"));
+
+        cell.setName("");
+        cell.setDescription("");
+        cell.setTransportContainer(null);
+        cell.setStorage(storage);
+
+        cellRepository.save(cell);
+        return cellConvertor.convertToCellDto(cell);
+    }
+
+    @Override
+    public void deleteCellById(Long id) {
+        Cell cell = cellRepository.findById(id)
+                .orElseThrow(()->new RuntimeException("Не найдено"));
+        cellRepository.delete(cell);
     }
 }
