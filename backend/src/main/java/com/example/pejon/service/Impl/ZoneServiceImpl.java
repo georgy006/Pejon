@@ -1,8 +1,11 @@
 package com.example.pejon.service.Impl;
 
+import com.example.pejon.model.Warehouse;
 import com.example.pejon.model.Zone;
+import com.example.pejon.model.dto.zone_dto.ZoneCreateDto;
 import com.example.pejon.model.dto.zone_dto.ZoneDto;
 import com.example.pejon.model.dto.zone_dto.ZoneWithCellDto;
+import com.example.pejon.repository.WarehouseRepository;
 import com.example.pejon.repository.ZoneRepository;
 import com.example.pejon.service.ZoneService;
 import com.example.pejon.service.convertor.ZoneConvertor;
@@ -18,6 +21,8 @@ public class ZoneServiceImpl implements ZoneService {
 
     @Autowired
     ZoneRepository zoneRepository;
+    @Autowired
+    WarehouseRepository warehouseRepository;
 
     @Autowired
     ZoneConvertor zoneConvertor;
@@ -48,5 +53,44 @@ public class ZoneServiceImpl implements ZoneService {
         return zone.stream()
                 .map(zoneConvertor::convertToZoneWithCellDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public ZoneDto addZone(ZoneCreateDto zoneCreateDto) {
+        Warehouse warehouse = warehouseRepository.findById(zoneCreateDto.warehouseId())
+                .orElseThrow(()-> new RuntimeException("Warehouse Не найдено"));
+        Zone zone = new Zone();
+
+        zone.setName(zoneCreateDto.name());
+        zone.setCapacity(zoneCreateDto.capacity());
+        zone.setWarehouse(warehouse);
+
+        zoneRepository.save(zone);
+
+        return zoneConvertor.convertToZoneDto(zone);
+    }
+
+    @Override
+    public ZoneDto updateZoneById(Long id, ZoneCreateDto zoneCreateDto) {
+        Warehouse warehouse = warehouseRepository.findById(zoneCreateDto.warehouseId())
+                .orElseThrow(()-> new RuntimeException("Warehouse Не найдено"));
+        Zone zone = zoneRepository.findById(id)
+                        .orElseThrow(()-> new RuntimeException("Zone Не найдено"));
+
+        zone.setName(zoneCreateDto.name());
+        zone.setCapacity(zoneCreateDto.capacity());
+        zone.setWarehouse(warehouse);
+
+        zoneRepository.save(zone);
+
+        return zoneConvertor.convertToZoneDto(zone);
+    }
+
+    @Override
+    public void deleteZoneById(Long id) {
+        Zone zone = zoneRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Zone Не найдено"));
+
+        zoneRepository.delete(zone);
     }
 }
