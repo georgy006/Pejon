@@ -1,5 +1,6 @@
 package com.example.pejon.service;
 
+import com.example.pejon.model.dto.auth.RegisterRequest;
 import com.example.pejon.model.dto.user_dto.UserCreateDto;
 import com.example.pejon.model.dto.user_dto.UserDto;
 
@@ -13,4 +14,5 @@ public interface UserService {
     UserDto createUser(UserCreateDto userCreateDto);
 
     UserDto updateUserById(Long id, UserCreateDto userCreateDto);
+    void register(RegisterRequest request);
 }

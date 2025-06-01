@@ -2,6 +2,7 @@ package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Role;
 import com.example.pejon.model.User;
+import com.example.pejon.model.dto.auth.RegisterRequest;
 import com.example.pejon.model.dto.user_dto.UserCreateDto;
 import com.example.pejon.model.dto.user_dto.UserDto;
 import com.example.pejon.repository.RoleRepository;
@@ -9,6 +10,7 @@ import com.example.pejon.repository.UserRepository;
 import com.example.pejon.service.UserService;
 import com.example.pejon.service.convertor.UserConvertor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +23,8 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
     @Autowired
     RoleRepository roleRepository;
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @Autowired
     UserConvertor userConvertor;
@@ -64,5 +68,24 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
 
         return userConvertor.convertToUserDto(user);
+    }
+
+    @Override
+    public void register(RegisterRequest request) {
+        // Проверяем, нет ли уже пользователя с таким логином
+        if (userRepository.findByLogin(request.login()).isPresent()) {
+            throw new RuntimeException("User with this login already exists");
+        }
+
+        Role role = roleRepository.findById(request.roleId())
+                .orElseThrow(() -> new RuntimeException("Role not found"));
+
+        User user = new User();
+        user.setName(request.name());
+        user.setLogin(request.login());
+        user.setPassword(passwordEncoder.encode(request.password())); // хэшируем пароль
+        user.setRole(role);
+
+        userRepository.save(user);
     }
 }
