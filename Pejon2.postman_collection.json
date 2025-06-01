@@ -503,17 +503,27 @@
 				{
 					"name": "getShelfById",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YW55QG1haWwuY29tIiwiZXhwIjoxNzQ4ODIzMzcyLCJpYXQiOjE3NDg3ODczNzJ9.tCQkqCLxykN--ebPhq3-Th2pDHULQYUGnHn44zqHrCE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/shelf/4",
+							"raw": "localhost:8080/shelf/38",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"shelf",
-								"4"
+								"38"
 							]
 						}
 					},
@@ -522,17 +532,20 @@
 				{
 					"name": "getAllCellsByShelfId",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/shelf/1/cells",
+							"raw": "localhost:8080/shelf/38/cells",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"shelf",
-								"1",
+								"38",
 								"cells"
 							]
 						}
@@ -581,11 +594,21 @@
 				{
 					"name": "addShelf",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YW55QG1haWwuY29tIiwiZXhwIjoxNzQ4ODIzMzcyLCJpYXQiOjE3NDg3ODczNzJ9.tCQkqCLxykN--ebPhq3-Th2pDHULQYUGnHn44zqHrCE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Шкаффф \",\n    \"capacity\": 3,\n    \"lineId\": 3\n}",
+							"raw": "{\n    \"name\": \"Шкафewqeqwe \",\n    \"capacity\": 3,\n    \"lineId\": 3\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -639,14 +662,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/shelf/34",
+							"raw": "localhost:8080/shelf/38",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"shelf",
-								"34"
+								"38"
 							]
 						}
 					},
@@ -1375,7 +1398,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/cell/search?query=X6",
+							"raw": "http://localhost:8080/cell/search?query=AAAa",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1388,7 +1411,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "X6"
+									"value": "AAAa"
 								}
 							]
 						}
@@ -1620,16 +1643,56 @@
 				{
 					"name": "login",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"vany@mail.com\",\n    \"password\": \"qwe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "register",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ваня\",\n    \"login\": \"vany@mail.com\",\n    \"password\": \"qwe\",\n    \"roleId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
 					},
 					"response": []
 				}
