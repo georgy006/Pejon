@@ -10,4 +10,6 @@ import java.util.List;
 public interface CellRepository extends JpaRepository<Cell, Long> {
     List<Cell> findAllByStorage_Id(Long storageId);
     List<Cell> findByTransportContainer_NameContainingIgnoreCase(String name);
+    List<Cell> findByStorageId(Long shelfId);
+
 }

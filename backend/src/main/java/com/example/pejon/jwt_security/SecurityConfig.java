@@ -28,7 +28,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login","/auth/register").permitAll()  // разрешаем логин без авторизации
+                        .requestMatchers("/auth/login","/auth/register").permitAll()
                         .anyRequest().authenticated()                // остальные требуют авторизации
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // без сессий

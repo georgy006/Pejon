@@ -2,6 +2,7 @@ package com.example.pejon.service;
 
 import com.example.pejon.model.dto.container_dto.ContainerCreateDto;
 import com.example.pejon.model.dto.container_dto.ContainerDto;
+import com.example.pejon.model.dto.shelf_dto.DeleteShelfResponse;
 import com.example.pejon.model.dto.shelf_dto.ShelfCreateDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
@@ -17,5 +18,7 @@ public interface ShelfService {
 
     ShelfDto addShelf(ShelfCreateDto shelfCreateDto);
     ShelfDto updateShelfById(Long id, ShelfCreateDto shelfCreateDto);
+
+    DeleteShelfResponse deleteShelfIfNotCellsById(Long shelfId);
     void deleteShelfById(Long id);
 }

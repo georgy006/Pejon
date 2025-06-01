@@ -3,6 +3,7 @@ package com.example.pejon.service.Impl;
 import com.example.pejon.model.Cell;
 import com.example.pejon.model.Line;
 import com.example.pejon.model.Shelf;
+import com.example.pejon.model.dto.shelf_dto.DeleteShelfResponse;
 import com.example.pejon.model.dto.shelf_dto.ShelfCreateDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
@@ -24,11 +25,11 @@ public class ShelfServiceImpl implements ShelfService {
     ShelfRepository shelfRepository;
     @Autowired
     LinesRepository linesRepository;
+    @Autowired
+    CellRepository cellRepository;
 
     @Autowired
     ShelfConvertor shelfConvertor;
-    @Autowired
-    CellRepository cellRepository;
 
     @Override
     public List<ShelfDto> getAllShelves() {
@@ -111,10 +112,30 @@ public class ShelfServiceImpl implements ShelfService {
     }
 
     @Override
+    public DeleteShelfResponse deleteShelfIfNotCellsById(Long shelfId) {
+        List<Cell> cells = cellRepository.findByStorageId(shelfId);
+
+        boolean hasNonClearCells = cells.stream().anyMatch(cell -> !isClear(cell));
+
+        if (!hasNonClearCells) {
+            cellRepository.deleteAll(cells);
+            shelfRepository.deleteById(shelfId);
+            return new DeleteShelfResponse(true, "Shelf deleted successfully.");
+        } else {
+            return new DeleteShelfResponse(false, "Shelf contains non-empty cells and was not deleted.");
+        }
+    }
+
+    @Override
     public void deleteShelfById(Long id) {
         Shelf shelf = shelfRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Shelf Не найдено"));
         shelfRepository.delete(shelf);
 
+    }
+    private boolean isClear(Cell cell) {
+        return (cell.getName() == null || cell.getName().isEmpty()) &&
+                (cell.getDescription() == null || cell.getDescription().isEmpty()) &&
+                (cell.getTransportContainer() == null);
     }
 }

@@ -2,6 +2,7 @@ package com.example.pejon.controller;
 
 import com.example.pejon.model.dto.container_dto.ContainerCreateDto;
 import com.example.pejon.model.dto.container_dto.ContainerDto;
+import com.example.pejon.model.dto.shelf_dto.DeleteShelfResponse;
 import com.example.pejon.model.dto.shelf_dto.ShelfCreateDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfDto;
 import com.example.pejon.model.dto.shelf_dto.ShelfWithCellDto;
@@ -48,8 +49,9 @@ public class ShelfController {
     public ShelfDto updateShelfById(@PathVariable Long id,@RequestBody ShelfCreateDto shelf){
         return shelfService.updateShelfById(id, shelf);
     }
+
     @DeleteMapping("/{id}")
-    void deleteShelfById(@PathVariable Long id){
-        shelfService.deleteShelfById(id);
+    public DeleteShelfResponse deleteShelf(@PathVariable Long id) {
+        return shelfService.deleteShelfIfNotCellsById(id);
     }
 }
