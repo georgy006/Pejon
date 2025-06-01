@@ -31,6 +31,7 @@ public class ShelfConvertor {
         return new ShelfWithCellDto(
           shelf.getId(),
           shelf.getName(),
+          shelf.getCapacity(),
           cells.stream()
                   .map(cellConvertor::convertToCellDto)
                   .collect(Collectors.toList())

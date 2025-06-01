@@ -7,6 +7,7 @@ import java.util.List;
 public record ShelfWithCellDto(
         Long id,
         String name,
+        int capacity,
         List<CellDto> cellDto
 ) {
 }
