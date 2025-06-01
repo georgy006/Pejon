@@ -1,6 +1,7 @@
 package com.example.pejon.model.dto.auth;
 
 public record AuthResponse(
-        String jwt
+        String jwt,
+        Long userId
 ) {
 }

@@ -1,9 +1,11 @@
 package com.example.pejon.controller;
 
 import com.example.pejon.jwt_security.JwtUtil;
+import com.example.pejon.model.User;
 import com.example.pejon.model.dto.auth.AuthRequest;
 import com.example.pejon.model.dto.auth.AuthResponse;
 import com.example.pejon.model.dto.auth.RegisterRequest;
+import com.example.pejon.repository.UserRepository;
 import com.example.pejon.service.Impl.CustomUserDetailsServiceImpl;
 import com.example.pejon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -25,6 +28,8 @@ public class AuthController {
     private CustomUserDetailsServiceImpl userDetailsService;
     @Autowired
     UserService userService;
+    @Autowired
+    UserRepository userRepository;
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -41,8 +46,10 @@ public class AuthController {
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.login());
         final String jwt = jwtUtil.generateToken(userDetails);
+        final User user = userRepository.findByLogin(authRequest.login())
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        return ResponseEntity.ok(new AuthResponse(jwt));
+        return ResponseEntity.ok(new AuthResponse(jwt, user.getId()));
     }
 
     @PostMapping("/register")
