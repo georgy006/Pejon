@@ -14,14 +14,14 @@ public class TypeController {
     TypeService typeService;
 
     @GetMapping("/all")
-    public List<Type> getAllLines() {
+    public List<Type> getAllType() {
         return typeService.getAllType();
     }
     @GetMapping("/{id}")
     public Type getTypeById(@PathVariable Long id) {
         return typeService.getTypeById(id);
     }
-    @PostMapping("/")
+    @PostMapping
     public Type addType(@RequestBody Type type) {
         return typeService.addType(type);
     }
@@ -30,7 +30,7 @@ public class TypeController {
         return typeService.updateTypeById(id, type);
     }
     @DeleteMapping("/{id}")
-    public void d(@PathVariable Long id){
+    public void deleteTypeById(@PathVariable Long id){
         typeService.deleteTypeById(id);
     }
 }

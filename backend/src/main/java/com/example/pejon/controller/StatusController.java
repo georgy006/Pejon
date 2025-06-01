@@ -23,7 +23,7 @@ public class StatusController {
     public Status getStatusById(@PathVariable Long id) {
         return statusService.getStatusById(id);
     }
-    @PostMapping("/")
+    @PostMapping
     public Status addStatus(@RequestBody Status status) {
         return statusService.addStatus(status);
     }
