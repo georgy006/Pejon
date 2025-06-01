@@ -39,4 +39,10 @@ public class CellController {
         cellService.deleteCellById(id);
     }
 
+
+    @GetMapping("/search")
+    public List<CellDto> searchCells(@RequestParam("query") String query) {
+        return cellService.searchByTransportContainerName(query);
+    }
+
 }

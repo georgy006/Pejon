@@ -14,4 +14,6 @@ public interface CellService {
     CellDto clearCellById(Long id);
     void deleteCellById(Long id);
 
+    List<CellDto> searchByTransportContainerName(String name);
+
 }

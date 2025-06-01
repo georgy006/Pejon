@@ -128,20 +128,13 @@ public class CellServiceImpl implements CellService {
         cellRepository.delete(cell);
     }
 
+    @Override
+    public List<CellDto> searchByTransportContainerName(String name) {
+        List<Cell> cells = cellRepository.findByTransportContainer_NameContainingIgnoreCase(name);
+        return cells.stream()
+                .map(cellConvertor::convertToCellDto)
+                .collect(Collectors.toList());
+    }
 
-//    private Application createApplication(Cell cell, Long userId){
-//        Date date = new Date();
-//        Application application = new Application();
-//        application.setTitle("Изменение ячейки ");
-//        application.setDescription(null);
-//        application.setData(date.toString());
-//        application.setType(null);
-//        application.setCell(cell);
-//        application.setStatus(null);
-//        application.setAuthor(userRepository.findById(userId)
-//                .orElseThrow(()-> new RuntimeException("Не найден")));
-//        application.setApprover(null);
-//        applicationRepository.save(application);
-//        return application;
-//    }
+
 }
