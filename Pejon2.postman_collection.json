@@ -1192,6 +1192,26 @@
 					"response": []
 				},
 				{
+					"name": "getRoleByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/role/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "addRole",
 					"request": {
 						"method": "POST",

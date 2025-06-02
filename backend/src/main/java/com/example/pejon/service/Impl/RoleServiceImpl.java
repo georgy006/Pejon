@@ -2,7 +2,9 @@ package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Role;
 import com.example.pejon.model.Status;
+import com.example.pejon.model.User;
 import com.example.pejon.repository.RoleRepository;
+import com.example.pejon.repository.UserRepository;
 import com.example.pejon.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,8 @@ import java.util.List;
 public class RoleServiceImpl implements RoleService {
     @Autowired
     RoleRepository roleRepository;
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public List<Role> getAllRole() {
@@ -23,6 +27,13 @@ public class RoleServiceImpl implements RoleService {
     public Role getRoleById(Long id) {
         return roleRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Role не найден:" + id));
+    }
+
+    @Override
+    public Role getRoleByUserId(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("User не найден:" + id));
+        return user.getRole();
     }
 
     @Override
