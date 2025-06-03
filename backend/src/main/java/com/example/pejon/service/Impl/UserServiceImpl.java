@@ -2,7 +2,7 @@ package com.example.pejon.service.Impl;
 
 import com.example.pejon.model.Role;
 import com.example.pejon.model.User;
-import com.example.pejon.model.dto.auth.RegisterRequest;
+import com.example.pejon.model.dto.auth_dto.RegisterRequest;
 import com.example.pejon.model.dto.user_dto.UserCreateDto;
 import com.example.pejon.model.dto.user_dto.UserDto;
 import com.example.pejon.repository.RoleRepository;

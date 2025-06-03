@@ -1,4 +1,4 @@
-package com.example.pejon.model.dto.auth;
+package com.example.pejon.model.dto.auth_dto;
 
 public record AuthRequest(
         String login,

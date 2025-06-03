@@ -2,9 +2,9 @@ package com.example.pejon.controller;
 
 import com.example.pejon.jwt_security.JwtUtil;
 import com.example.pejon.model.User;
-import com.example.pejon.model.dto.auth.AuthRequest;
-import com.example.pejon.model.dto.auth.AuthResponse;
-import com.example.pejon.model.dto.auth.RegisterRequest;
+import com.example.pejon.model.dto.auth_dto.AuthRequest;
+import com.example.pejon.model.dto.auth_dto.AuthResponse;
+import com.example.pejon.model.dto.auth_dto.RegisterRequest;
 import com.example.pejon.repository.UserRepository;
 import com.example.pejon.service.Impl.CustomUserDetailsServiceImpl;
 import com.example.pejon.service.UserService;

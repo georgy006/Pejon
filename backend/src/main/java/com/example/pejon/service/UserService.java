@@ -1,6 +1,6 @@
 package com.example.pejon.service;
 
-import com.example.pejon.model.dto.auth.RegisterRequest;
+import com.example.pejon.model.dto.auth_dto.RegisterRequest;
 import com.example.pejon.model.dto.user_dto.UserCreateDto;
 import com.example.pejon.model.dto.user_dto.UserDto;
 
