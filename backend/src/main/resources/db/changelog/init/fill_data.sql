@@ -107,14 +107,12 @@ INSERT INTO transport_container (name) VALUES
 -- Заполнение таблицы role (Роли пользователей)
 INSERT INTO role (name) VALUES
 ('Админ'),
-('Менеджер'),
 ('Работник');
 
 -- Заполнение таблицы user_table (Пользователи)
 INSERT INTO user_table (name, login, password, role_id) VALUES
-('Алиса', 'alisa123', 'password1', 1),
-('Боб', 'bob456', 'password2', 2),
-('Чарли', 'charlie789', 'password3', 3);
+('Админ', 'admin', '$2a$10$NJeIMei8k3X3k50S9GQUTuR0uGuroUNv1a23eTwxcjveOLL22hpVu', 1),
+('Иван', 'ivan1', '$2a$10$8ebeWP0Vj6kilMqwA9fmtuz0CR1T0YiJdtfToWePE9w5oevnH.z8C', 2);
 
 INSERT INTO cell (name, description, transport_container_id, storage_id) VALUES
 -- Контейнер 1 (3 записи)
@@ -382,5 +380,5 @@ INSERT INTO status (name, terminal) VALUES
 
 -- Заполнение таблицы application (Заявки)
 INSERT INTO application (title, description, data, type_id, cell_id, status_id, author_id, approver_id) VALUES
-('Входящая поставка', 'Новая партия товаров', '2025-04-01', 1, 1, 1, 1, 2),
-('Запрос на хранение', 'Нужно дополнительное место для мелких товаров', '2025-04-02', 2, 2, 2, 2, 3);
+('Входящая поставка', 'Новая партия товаров', '2025-04-01', 1, 1, 1, 1, 1),
+('Запрос на хранение', 'Нужно дополнительное место для мелких товаров', '2025-04-02', 2, 2, 2, 2, 1);
